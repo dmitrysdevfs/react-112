@@ -1,0 +1,22 @@
+.text {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.active {
+  color: green;
+}
+
+.retired {
+  color: orangered;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  color: blueviolet;
+}
