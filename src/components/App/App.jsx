@@ -1,50 +1,24 @@
-// import css from './App.module.css'
-
-// import AppBar from '../AppBar/AppBar';
-// import PilotList from '../PilotList/PilotList';
-// import officers from '../../officers.json';
-
-// import RainIcon from "../../assets/cloud-rain.svg";
-
-const ProfileSection = ({ title, children }) => {
-  return (
-    <section>
-      <h2>{title}</h2>
-      {children}
-    </section>
-  );
-};
-
-const StudentProfile = () => {
-  return (
-    <div>
-      <p>Профіль студента</p>
-      <button>Кнопка щось зробити</button>
-    </div>
-  );
-};
+import { useState } from 'react';
+import Counter from '../Counter/Counter';
+import css from './App.module.css';
+import CountDisplay from '../CountDisplay/CountDisplay';
 
 export default function App() {
+  const [clicks, setClicks] = useState(0);
+
+  const handleClick = () => {
+    setClicks(clicks + 1);
+  };
+
   return (
-    <>
-      <ProfileSection title="Рейтинг">
-        <StudentProfile />
-      </ProfileSection>
-      <ProfileSection title="Що це за очки досвіду та рівні?">
-        <p>Список досвіду</p>
-      </ProfileSection>
-      <ProfileSection title="Як отримати більше очків досвіду?">
-        <h3>Вказівки</h3>
-      </ProfileSection>
+    <div className={css.container}>
+      <h1 className={css.title}>State in React</h1>
 
-      {/* <RainIcon width="80" height="80" />
+      <CountDisplay count={clicks} />
 
-      <h1 className={css.title}>Styling React Components</h1>
-
-      <AppBar />
-
-      <h2>Active Officers</h2>
-      <PilotList items={officers} /> */}
-    </>
+      <Counter text="A" onClick={handleClick} />
+      <Counter text="B" onClick={handleClick} />
+      <Counter text="C" onClick={handleClick} />
+    </div>
   );
 }

@@ -1,22 +1,18 @@
-# Заняття 2 - Стилізація
+# Заняття 3 - Події та стан компонента
 
-- Трішки про вбудовані стилі
-  - Проблема маштабування, підтримки ітд
-- Трішки про ванільний CSS
-  - Файл стилів
-  - Імпорт стилів
-  - Проблема глобальної області видимості
-- Структура папок та файлів
-  - Папка компонента
-  - Файл компонента
-  - Файл стилів
-  - Іменування
-- CSS-модулі
-  - Використання
-  - Композиція класів з бібліотекою [clsx](https://www.npmjs.com/package/clsx)
-- Нормалізація стилів з [modern-normalize](https://www.npmjs.com/package/modern-normalize)
-- Імпорт локальних зображень
-- Бібліотека [React Icons](https://react-icons.github.io/react-icons/)
-- Імпорт кастомних SVG іконок
-  - Налаштування `vite-plugin-svgr` у `vite.config.js`
-  - Імпорт SVG файлу як компонента
+- Обробка подій
+  - Іменування атрибутів обробників `on*`
+  - Додавання обробника події
+  - Посилання на функцію
+  - Анонімний колбек
+  - Об'єкт події
+- [Стан компонента](https://raw.githubusercontent.com/goitacademy/react-course-track/03-state/assets/state.png)
+  - Реактивність
+  - Хук `useState`
+  - Обмеження хуків
+  - Асинхронність оновлення стану
+  - Ізоляція стану
+  - [Підняття стану](https://raw.githubusercontent.com/goitacademy/react-course-track/03-state/assets/lifting-state.png)
+    - Компоненти `Counter` та `CountDisplay`
+  - Створюємо акордеон
+- [Воркшоп Article Reader](https://raw.githubusercontent.com/goitacademy/react-course-track/03-state/assets/reader.png)
