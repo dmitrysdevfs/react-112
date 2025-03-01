@@ -1,6 +1,8 @@
 // import { useState } from 'react';
 // import Counter from '../Counter/Counter';
+import Reader from '../Reader/Reader';
 import css from './App.module.css';
+import articles from '../../articles.json';
 // import CountDisplay from '../CountDisplay/CountDisplay';
 import Accordion from '../Accordion/Accordion';
 
@@ -33,7 +35,7 @@ const accordionItems = [
 ];
 
 export default function App() {
-  //   const [clicks, setClicks] = useState(0);
+  // const [clicks, setClicks] = useState(0);
 
   // const handleClick = () => {
   //   setClicks(clicks + 1);
@@ -42,6 +44,8 @@ export default function App() {
   return (
     <div className={css.container}>
       <h1 className={css.title}>State in React</h1>
+
+      <Reader items={articles} />
 
       <Accordion items={accordionItems} />
 
