@@ -1,38 +1,57 @@
-import { useId } from 'react';
 import css from './UserForm.module.css';
 
-export default function UserForm({ onAdd }) {
-  const fieldId = useId();
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // console.log(event.target.elements.username.value);
-    // console.log(event.target.elements.role.value);
-
-    onAdd({
-      name: event.target.elements.username.value,
-      role: event.target.elements.role.value,
-    });
-
-    event.target.reset();
-  };
-
+export default function UserForm() {
   return (
-    <form className={css.form} onSubmit={handleSubmit}>
+    <form className={css.form}>
       <div className={css.group}>
-        <label htmlFor={`${fieldId}-username`}>Username:</label>
-        <input type="text" name="username" id={`${fieldId}-username`} />
+        <label className={css.label}>Username:</label>
+        <input className={css.input} type="text" name="username" />
       </div>
 
       <div className={css.group}>
-        <label htmlFor={`${fieldId}-role`}>Role:</label>
-        <select name="role" id={`${fieldId}-role`}>
-          <option value="geust">Geust</option>
+        <label className={css.label}>Email:</label>
+        <input className={css.input} type="email" name="email" />
+      </div>
+
+      <div className={css.group}>
+        <label className={css.label}>Role:</label>
+        <select className={css.input} name="role">
+          <option value="guest">Guest</option>
           <option value="user">User</option>
           <option value="admin">Admin</option>
         </select>
       </div>
-      <button type="submit">Submit</button>
+
+      <fieldset className={css.group}>
+        <legend className={css.legend}>Notification Preferences</legend>
+        <label className={css.checkboxLabel}>
+          <input
+            className={css.checkboxInput}
+            type="checkbox"
+            name="email_notif"
+          />
+          Receive email notifications
+        </label>
+        <label className={css.checkboxLabel}>
+          <input
+            className={css.checkboxInput}
+            type="checkbox"
+            name="sms_notif"
+          />
+          Receive SMS notifications
+        </label>
+        <label className={css.checkboxLabel}>
+          <input
+            className={css.checkboxInput}
+            type="checkbox"
+            name="push_notif"
+          />
+          Receive push notifications
+        </label>
+      </fieldset>
+      <button className={css.button} type="submit">
+        Submit
+      </button>
     </form>
   );
 }
