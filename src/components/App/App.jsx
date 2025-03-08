@@ -4,6 +4,7 @@
 // import Sidebar from '../Sidebar/Sidebar';
 // import { useState } from 'react';
 // import Timer from '../Timer';
+import ThemeSwitcher from '../ThemeSwitcher';
 import css from './App.module.css';
 // import articles from '../../articles.json';
 
@@ -21,6 +22,8 @@ export default function App() {
   return (
     <div className={css.container}>
       <h1 className={css.title}>Effects in React</h1>
+
+      <ThemeSwitcher />
       {/* 
       <button onClick={toogleTimer}>{isTimerMounted ? 'Hide' : 'Show'}</button>
       {isTimerMounted && <Timer />} */}
