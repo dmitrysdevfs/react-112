@@ -6,15 +6,19 @@ export default function Balance() {
   const balance = useSelector((state) => state.balance.value);
 
   const handleDeposit = () => {
-    //
-    //
-    const depositAction = deposit(50);
-    dispatch(depositAction);
+    // відправити action депозита
+    // щоб сповістити store, що щось відбулось
+    // const depositAction = deposit(50);
+    // dispatch(depositAction);
+    dispatch(deposit(50));
   };
 
   const handleWithdraw = () => {
-    const withdrawAction = withdraw(20);
-    dispatch(withdrawAction);
+    // відправити action зняття коштів
+    // щоб сповістити store, що щось відбулось
+    // const withdrawAction = withdraw(20);
+    // dispatch(withdrawAction);
+    dispatch(withdraw(20));
   };
 
   return (

@@ -4,6 +4,12 @@ const initialState = {
   balance: {
     value: 0,
   },
+  locale: {
+    lang: 'uk',
+  },
+  notes: {
+    items: ['JS', 'TS', 'Rect', 'Node'],
+  },
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -24,6 +30,22 @@ const rootReducer = (state = initialState, action) => {
         },
       };
 
+    case 'locale/changeLang':
+      return {
+        ...state,
+        locale: {
+          lang: action.payload,
+        },
+      };
+
+    case 'notes/addNote':
+      return {
+        ...state,
+        notes: {
+          items: [...state.notes.items, action.payload],
+        },
+      };
+
     default:
       return state;
   }
@@ -36,3 +58,7 @@ export const store = configureStore({
 export const deposit = createAction('balance/deposit');
 
 export const withdraw = createAction('balance/withdraw');
+
+export const changeLang = createAction('locale/changeLang');
+
+export const addNote = createAction('notes/addNote');
