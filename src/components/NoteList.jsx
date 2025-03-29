@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 
 export default function NoteList() {
-  const notes = useSelector((state) => state.notes.items);
+  const notes = useSelector((state) => state.notes?.items || []);
 
   return (
     <ul>

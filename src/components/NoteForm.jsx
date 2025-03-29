@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addNote } from '../redux/store';
+import { addNote } from '../redux/notesSlise';
 
 export default function NoteForm() {
   const dispatch = useDispatch();
