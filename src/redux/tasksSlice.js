@@ -1,5 +1,42 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSelector, createSlice } from '@reduxjs/toolkit';
 import { fetchTasks, addTask, deleteTask } from './tasktsOps';
+import { selectTextFilter } from './filtersSlice';
+
+export const selectTasks = (state) => state.tasks.items;
+
+export const selectIsLoading = (state) => state.tasks.loading;
+
+export const selectIsError = (state) => state.tasks.error;
+
+// export const selectVisibleTasks = (state) => {
+//   console.log('selectVisibleTasks', Date.now());
+//   const tasks = selectTasks(state);
+//   const textFilter = selectTextFilter(state);
+
+//   return tasks.filter((task) =>
+//     task.text.toLowerCase().includes(textFilter.toLowerCase())
+//   );
+// };
+
+export const selectVisibleTasks = createSelector(
+  [selectTasks, selectTextFilter],
+  (tasks, textFilter) => {
+    return tasks.filter((task) =>
+      task.text.toLowerCase().includes(textFilter.toLowerCase())
+    );
+  }
+);
+
+// export const selectTaskCount = (state) => {
+//   console.log('selectTaskCount', Date.now());
+//   const tasks = selectTasks(state);
+//   return tasks.length;
+// };
+
+export const selectTaskCount = createSelector([selectTasks], (tasks) => {
+  console.log('selectTaskCount', Date.now());
+  return tasks.length;
+});
 
 const slice = createSlice({
   name: 'tasks',
